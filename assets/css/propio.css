@@ -1,0 +1,161 @@
+ 
+/* SEÇÃO GERAL */
+.servicos {
+  padding: 20px 0px 100px 0;
+  background: #fff;
+  position: relative;
+}
+  
+/* CARD-serviceS */
+.card-services {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.card-service {
+  position: relative;
+  height: 450px;
+  flex: 1 0 25%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 80px 50px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* Animação suave nos card-services */
+.card-service {
+  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+ 
+/* CAMADA DE IMAGEM COM ZOOM E ESCURECIMENTO */
+.card-service::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  background-image: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: brightness(0.4);
+  /* escurece a imagem de forma permanente */
+}
+
+/* HOVER: zoom + um pouco mais de brilho */
+.card-service:hover::before {
+  transform: scale(1.1);
+  filter: brightness(0.85);
+  /* levemente menos escura ao hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+
+.card-service h3,
+.card-service p,
+.numero {
+  position: relative;
+  z-index: 1;
+}
+
+/* NÚMERO GRANDE */
+.numero {
+  font-size: 90px;
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 2px red;
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  z-index: 1; 
+
+}
+
+/* TEXTO DOS CARD-serviceS */
+.card-service h3 {
+  font-size: 30px;
+  
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+      top: 10px;
+  
+}
+
+.card-service p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* FUNDO DE CADA CARD-service */
+.card-service1 {
+  background-image: url('../img/services-1.png');
+}
+
+.card-service2 {
+  background-image: url('../img/services-2.jpg');
+}
+
+.card-service3 {
+  background-image: url('../img/services-3.jpg');
+}
+
+.card-service4 {
+  background-image: url('../img/services-4.jpg');
+}
+
+.card-service5 {
+  background-image: url('../img/services-5.jpeg');
+}
+.card-service6 {
+  background-image: url('../img/services-6.jpg');
+}
+.card-service7 {
+  background-image: url('../img/services-7.jpg');
+}
+ 
+/* === RESPONSIVO === */
+
+/* Tablets: 2 colunas */
+@media (max-width: 1023px) {
+  .card-service {
+    flex: 1 0 50%;
+  }
+}
+
+/* Celulares: 1 coluna */
+@media (max-width: 768px) {
+  .card-service {
+    flex: 1 0 100%;
+  }
+
+  .cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .cabecalho h2 {
+    font-size: 28px;
+  }
+
+  .botao {
+    align-self: flex-start;
+  }
+
+  .card-services {
+    width: 100%;
+    /* em vez de 100vw, que causaria rolagem horizontal */
+  }
+}
