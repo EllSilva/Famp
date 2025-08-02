@@ -7,7 +7,7 @@
 */
 
 /*--------------------------------------------------------------
-# Font & Color Variables
+# Font & Color Variables h1, h2, h3, h4, h5, h6
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
@@ -22,7 +22,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #2b180d; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #00a9b3; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #56b8e6; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #008188; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -85,6 +85,7 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+  font-weight: bold;
 }
 
 /* PHP Email Form Messages
